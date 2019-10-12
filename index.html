@@ -3,10 +3,33 @@
 <head>
 	<title>TTTSP</title>
 	<script type="text/javascript" src="src/p5.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/TicTacToe.css">
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display');
+	</style>
 	<link rel="stylesheet" href="src/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Saira+Stencil+One&display=swap" rel="stylesheet">
 </head>
 <body>
+	<p align="center" id="result" onclick="restart()">Tic Tac Toe</p>
+	<div class="container">
+		<div class="row">
+			<div class="scoring col-lg-2">
+				PLAYER-X
+				<br>
+				CPU-O 
+			</div>
+			<div class="shadow col-lg-8"align = "center" id="sketch-holder" >
+			</div>
+			<div class="scoring col-lg-2">
+					X : <span id="Xscore">0</span> 
+					<br>
+					O : <span id="Oscore">0</span>
+					Tie : <span id="draws">0</span>
+				</div>
+		</div>
+	</div>
+
     <script src="assets/box.js"></script>
     <script src="assets/index.js"></script>
 </body>

@@ -1,9 +1,15 @@
 var table = [];
 var turn = 0;//even red turn, odd green(computer) turn
-var SIZE = 600;
+var SIZE = 500;
+var over = false;
+var xscore = 0;
+var oscore = 0;    
+var draws = 0;
 //0 - blank (1 value) - red (-1 value)  - green
 function setup(){
     var canvas = createCanvas(SIZE, SIZE);
+    canvas.class('shadow');
+    canvas.parent(document.getElementById('sketch-holder'));
     for(var i = 0; 3>i; i++){
         for(var j = 0; 3>j; j++){
             table.push(new Box(0, j, i));
@@ -11,10 +17,10 @@ function setup(){
     }
 }
 function draw(){
-    background('black');
     for(var i = 0;table.length>i;i++){
         table[i].show();
     }
+    
 }
 function check(a, b, c){
     if( a != 0 && a == b && a ==c && b == c){
@@ -55,7 +61,24 @@ function gameOver(grid){
     }
     return winner;
 }
+function restart(){
+    if(over){
+        document.getElementById('result').textContent = 'Tic Tac Toe';
+        turn = 0;
+        over = false;
+        table = [];
+        for(var i = 0; 3>i; i++){
+            for(var j = 0; 3>j; j++){
+                table.push(new Box(0, j, i));
+            }
+        }
+        clear();
+    }
+}
 function mouseClicked(){
+    if(over){
+        return;
+    }
     for(var i = 0;table.length>i;i++){
         if(table[i].isInside(mouseX, mouseY)){
             if(table[i].value == 0){
@@ -65,7 +88,7 @@ function mouseClicked(){
                     table[i].value = -1;
                 }
                 turn++;
-                if(turn % 2 == 1){
+                if(turn % 2 == 1 && turn < 9){
                     let tempGrid = [];
                     for(let j = 0; 9>j;j++){
                         tempGrid.push({value : table[j].value, x : table[j].x , y : table[j].y});
@@ -77,12 +100,22 @@ function mouseClicked(){
                 }
                 var winner = gameOver(table);
                 if(winner != 0){
-                    noLoop();
+                    //noLoop();
+                    over = true;
                     if(winner == 1){
+                        document.getElementById('result').textContent = 'X-WINS !';
+                        xscore++;
+                        document.getElementById('Oscore').textContent = xscore;
                         console.log('X - RED WINs !!');
                     }else if(winner == -1){
+                        document.getElementById('result').textContent = 'O-WINS !';
+                        oscore++;
+                        document.getElementById('Oscore').textContent = oscore;
                         console.log('O - GREEN WINs !!');
                     }else{
+                        document.getElementById('result').textContent = 'DRAW !';
+                        draws++;
+                        document.getElementById('draws').textContent = draws;
                         console.log('draw');
                     }
                 }
