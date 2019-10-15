@@ -1,14 +1,17 @@
 body{
-	background-repeat: no-repeat;	
-	background-size: cover;
+	/* background-repeat: no-repeat;	 */
+	background-size: length;
 	width: 100wh;
-	height: 90vh;
-	color: #fff;
-	background: linear-gradient(-45deg, #EE7752, #4F0A6D, #23A6D5, #4F0A6D);
+	height: 100vh;
+	color: #654321;
+	/* background: linear-gradient(-45deg, #EE7752, #4F0A6D, #23A6D5, #4F0A6D);
 	background-size: 400% 400%;
 	-webkit-animation: Gradient 10s ease infinite;
 	-moz-animation: Gradient 10s ease infinite;
-	animation: Gradient 10s ease infinite;
+	animation: Gradient 10s ease infinite; */
+	background: rgb(255,254,254);
+background: linear-gradient(0deg, rgba(255,254,254,1) 6%, rgba(250,244,237,1) 99%, rgba(249,249,249,1) 100%);
+
 }
 @-webkit-keyframes Gradient {
 	0% {
@@ -53,13 +56,13 @@ body{
 }
 .glyphicon-remove,.glyphicon-adjust{
 	font-size: 80px;
-	color: #edeeef;
+	color: #654321;
 }
 .scoring{
 	font-size: 150%;
 }
 div{
-	color: #edeeef;
+	color: #654321;
 	font-family: 'Major Mono Display', monospace;
 	font-size: 1em;
 	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
@@ -70,15 +73,15 @@ span{
 	margin-left: 31px;
 }
 p{
-	color: #edeeef;
+	color: #654321;
 	font-family: 'Major Mono Display', monospace;
 	font-size: 7em;
 	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
                  0px 8px 13px rgba(0,0,0,0.1),
                  0px 18px 23px rgba(0,0,0,0.1);
 }
-.shadow {
-        -webkit-box-shadow: 10px 20px 80px 20px rgba(0,0,0,1);
-        -moz-box-shadow: 10px 20px 80px 20px rgba(0,0,0,1);
-        box-shadow: 10px 20px 80px 20px rgba(0,0,0,1);
+.customShadow {
+	-webkit-box-shadow: 0px 0px 41px 0px rgba(0,0,0,1);
+-moz-box-shadow: 0px 0px 41px 0px rgba(0,0,0,1);
+box-shadow: 0px 0px 41px 0px rgba(0,0,0,1);
     }

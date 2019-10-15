@@ -9,8 +9,8 @@ class Box{
         if(this.value == 0){
             fill(color('rgba(0, 0, 0, 0)'));
         }else if(this.value == 1){
-            stroke('white');
-            strokeWeight(2);
+            stroke('#654321');
+            strokeWeight(5);
             strokeCap(ROUND);
             let shift = SIZE/4.3;
             line(this.x * SIZE/3 + shift, this.y * SIZE/3+shift, this.x*SIZE/3 + SIZE/3 - shift, this.y*SIZE/3 + SIZE/3-shift);
@@ -18,13 +18,14 @@ class Box{
             line(this.x * SIZE/3 + shift, this.y * SIZE/3+shift, this.x * SIZE/3 + SIZE/3-shift, this.y * SIZE/3+shift);
             line(this.x*SIZE/3 + SIZE/3 - shift, this.y*SIZE/3 + SIZE/3-shift, this.x*SIZE/3+shift, this.y*SIZE/3 + SIZE/3-shift);
         }else if(this.value == -1){
-            stroke('white');
-            strokeWeight(3);
+            stroke('#654321');
+            strokeWeight(5);
             strokeCap(ROUND);
             circle(this.x * SIZE/3 + SIZE/6, this.y * SIZE/3 + SIZE/6, SIZE/6);
         }
         stroke(200);
-        strokeWeight(3);
+        strokeWeight(1);
+        stroke('#654321');
         strokeCap(ROUND);
         rect(this.x * SIZE/3, this.y * SIZE/3, SIZE/3, SIZE/3);
     }
